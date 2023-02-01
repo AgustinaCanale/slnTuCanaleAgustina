@@ -1,0 +1,54 @@
+﻿@model SistemaWebMisRecetas1.Models.Receta
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detalle</title>
+</head>
+<body>
+    <h2>Ver Detalle</h2>
+    @Html.ActionLink("Volver a recetas", "Index", "Receta")
+
+    <p>
+        @Html.DisplayNameFor(model => model.Titulo)
+        @Html.DisplayFor(model => model.Titulo)
+    </p>
+
+    <p>
+        @Html.DisplayNameFor(model => model.Categoria)
+        @Html.DisplayFor(model => model.Categoria)
+    </p>
+
+    <p>
+        @Html.DisplayNameFor(model => model.Ingredientes)
+        @Html.DisplayFor(model => model.Ingredientes)
+    </p>
+
+    <p>
+        @Html.DisplayNameFor(model => model.Instrucciones)
+        @Html.DisplayFor(model => model.Instrucciones)
+    </p>
+
+    <p>
+        @Html.DisplayNameFor(model => model.Autor)
+        @Html.DisplayFor(model => model.Autor)
+    </p>
+
+    <p>
+        @Html.DisplayNameFor(model => model.Apellido)
+        @Html.DisplayFor(model => model.Apellido)
+    </p>
+
+    <p>
+        @Html.DisplayNameFor(model => model.Edad)
+        @Html.DisplayFor(model => model.Edad)
+    </p>
+
+    <p>
+        @Html.DisplayNameFor(model => model.Email)
+        @Html.DisplayFor(model => model.Email)
+    </p>
+</body>
+</html>

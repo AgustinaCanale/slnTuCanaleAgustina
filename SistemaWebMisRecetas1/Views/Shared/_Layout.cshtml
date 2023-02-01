@@ -1,0 +1,34 @@
+﻿<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/css/main.css" rel="stylesheet" type="text/css" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+
+
+
+    <div id="header">
+        <h1> RECETAS</h1>
+    </div>
+    <div class="nav">
+        @Html.ActionLink("Inicio","Index","Home")
+        @Html.ActionLink("Recetas", "Index", "Receta")
+    </div>
+
+    <div id="content">
+        @RenderBody()
+    </div>
+
+    <div id="sidebar">
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+    </div>
+
+    <div id="footer">
+        <p>recetas@web.com</p>
+    </div>
+
+</body>
+</html>
