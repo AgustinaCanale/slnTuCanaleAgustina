@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    @Html.ActionLink("Nueva", "Create", "Receta")
+   
 
     <table>
         <tr>
@@ -37,13 +37,23 @@
                 <td>@Html.ActionLink(item.Apellido, "RecetaApellido", "Receta", new{apellido = item.Apellido})</td>
                 <td>@Html.DisplayFor(modelItem => item.Edad)</td>
                 <td>@Html.DisplayFor(modelItem => item.Email)</td>
-                @*<td>*@
-                @*@Html.ActionLink("Eliminar", "Eliminar", "Empleado", new{id = item.Id})
-            @Html.ActionLink("Editar", "Editar", "Empleado", new{id = item.Id})*@
-                @*</td>*@
+                <td>
+                    @Html.ActionLink("Eliminar", "Delete", "Receta", new{id = item.Id})
+                    @Html.ActionLink("Editar", "Edit", "Receta", new{id = item.Id})
+                   
+                </td>
             </tr>
         }
     </table>
 
+    @section SideBar {
+        <div>
+         
+            @Html.ActionLink("Crear", "Create","Receta")
+            @Html.ActionLink("Volver al inicio", "Index", "Home")
+        
+
+        </div>
+    }
 </body>
 </html>

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using SistemaWebMisRecetas1.Data;
 using SistemaWebMisRecetas1.Models;
 using System.Linq;
@@ -97,7 +98,85 @@ namespace SistemaWebMisRecetas1.Controllers
             return View("Create", receta);
         }
 
+        //delete
 
+
+        [HttpGet]
+
+
+        public ActionResult Delete(int id)
+        {
+            var receta = context.Recetas.Find(id);
+
+            if (receta == null)
+            {
+                return NotFound();
+            }
+
+            else
+            {
+                return View(receta);
+            }
+
+        }
+
+
+        [ActionName("Delete")]
+        [HttpPost]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            var receta = context.Recetas.Find(id);
+            if (receta == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                context.Recetas.Remove(receta);
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+        }
+
+
+
+        //Edit
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var receta = TraerUna(id);
+
+            if (receta == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return View(receta);
+            }
+        }
+
+        [HttpPost]
+        [ActionName("Edit")]
+
+        public ActionResult EditConfirmed(Receta receta)
+        {
+            if (ModelState.IsValid)
+            {
+                context.Entry(receta).State = EntityState.Modified;
+
+                context.SaveChanges();
+
+                return RedirectToAction("Index");
+
+            }
+            else
+            {
+                return View(receta);
+            }
+        }
     }
 }
 

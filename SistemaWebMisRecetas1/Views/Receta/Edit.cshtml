@@ -5,13 +5,12 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Create</title>
+    <title>Edit</title>
 </head>
 <body>
+    <h1>Editar Empleado</h1>
 
-    <h1>Nombre receta colocar</h1>
-
-    @using (Html.BeginForm("Create", "Receta", FormMethod.Post))
+    @using (Html.BeginForm("Edit", "Empleado", FormMethod.Post))
     {
         <p>
             @Html.LabelFor(model => model.Titulo)
@@ -48,8 +47,8 @@
             @Html.TextBoxFor(model => model.Apellido)
             @Html.ValidationMessageFor(model => model.Apellido)
         </p>
-
-        <p>
+        
+         <p>
             @Html.LabelFor(model => model.Edad)
             @Html.TextBoxFor(model => model.Edad)
             @Html.ValidationMessageFor(model => model.Edad)
@@ -61,21 +60,24 @@
             @Html.ValidationMessageFor(model => model.Email)
         </p>
 
-        <input type="submit" action="Create" />
 
-        @Html.ActionLink("Ver las recetas", "Index", "Receta")
+
+        <input type="submit" action="Edit" />
+
+     
+
 
     }
 
-    @section SideBar {
-        <div>
 
+
+    @section SideBar{
+        <div>
             @Html.ActionLink("Crear", "Create","Receta")
             @Html.ActionLink("Volver al inicio", "Index", "Home")
 
 
         </div>
     }
-
 </body>
 </html>

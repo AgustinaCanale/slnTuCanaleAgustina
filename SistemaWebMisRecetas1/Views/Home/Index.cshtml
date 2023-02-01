@@ -7,9 +7,33 @@
 </head>
 <body>
     <h2>@ViewBag.Nombre</h2>
-    <h3>@ViewBag.Fecha</h3>
 
     @Html.ActionLink("Ir a las recetas", "Index", "Receta")
 
+
+    @section SideBar{
+        <h1>Bienvenidos</h1>
+        <img style="width:400px; height:300px" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/breakfast-table-with-pancakes-blueberry-jam-and-tea-royalty-free-image-1615985501.?crop=0.670xw:1.00xh;0.119xw,0&resize=640:*" />
+        <img style="width:400px;height:300px" src="https://i2.wp.com/www.recetaslily.com/wp-content/uploads/2019/09/ba004a_be9ce8e524824a1ca997f5c0cce49974-mv2.jpg?fit=650%2C824&ssl=1" />
+        <img style="width:400px; height:300px" src="https://i.pinimg.com/736x/c9/9c/48/c99c48b67e7740b3b7bf5099588ed067.jpg" />
+        
+    }
+
+    @section Content{
+        <h5>
+            Desayuno Americano
+        </h5>
+        <p>
+            ¿Qué es el desayuno americano? El desayuno americano está compuesto por huevos, ya sean fritos o revueltos, bacon y tortitas americanas. Como bebida, suele optarse por el café o zumos de frutas y en ocasiones, en algunos hoteles y restaurantes se complementa con patatas fritas.
+        </p>
+
+       <h5>Desayuno Ingles</h5>
+      <p>  Hoy en día se suele preparar con huevos –fritos, revueltos o cocidos-, bacon, salchichas, champiñones, tomates –con un golpe de plancha-, black pudding –un embutido muy similar a la morcilla española-, tostadas –de pan blanco o integral-, judías y patatas –fritas o en puré.</p>
+
+      <h5>Desayuno Argentino</h5>
+      <p>
+              En Argentina, Paraguay y Uruguay, se desayuna mate cocido, té, leche chocolatada o café con leche, jugo de naranja, con algo dulce: medialunas (que, dulces o saladas, son parecidas a los croissants franceses)
+      </p>
+    }
 </body>
 </html>

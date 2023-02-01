@@ -50,5 +50,15 @@
         @Html.DisplayNameFor(model => model.Email)
         @Html.DisplayFor(model => model.Email)
     </p>
+
+    @section SideBar {
+            <div>
+
+            @Html.ActionLink("Crear", "Create","Receta")
+            @Html.ActionLink("Volver al inicio", "Index", "Home")
+
+
+            </div>
+    }
 </body>
 </html>

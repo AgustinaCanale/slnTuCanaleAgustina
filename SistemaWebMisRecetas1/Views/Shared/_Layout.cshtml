@@ -11,19 +11,35 @@
     <div id="header">
         <h1> RECETAS</h1>
     </div>
-    <div class="nav">
+    <div id="menu">
+        <div class="links">
         @Html.ActionLink("Inicio","Index","Home")
-        @Html.ActionLink("Recetas", "Index", "Receta")
+            @Html.ActionLink("Recetas", "Index", "Receta")
+        </div>
     </div>
 
     <div id="content">
+        @if (IsSectionDefined("Content"))
+        {
+            @RenderSection("Content")
+        }
+        else
+        {
+            <h2> </h2>
+        }
+
         @RenderBody()
     </div>
 
     <div id="sidebar">
-        <img src="" alt="" />
-        <img src="" alt="" />
-        <img src="" alt="" />
+        @if (IsSectionDefined("SideBar"))
+        {
+            @RenderSection("SideBar")
+        }
+        else
+        {
+            <h2> </h2>
+        }
     </div>
 
     <div id="footer">
